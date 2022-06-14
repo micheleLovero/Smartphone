@@ -31,6 +31,9 @@ public class smarphoneRepository implements smartphoneService{
 		
 		return jdbcTemplate.update("INSERT INTO smartphone (cpu, dimensioni, display_ppi, display_resolution, display_size, nome , note, peso, ram) VALUE(?,?,?,?,?,?,?,?,?)", new Object[] {smartphone.getCpu(), smartphone.getDimensioni(), smartphone.getDisplay_pp(), smartphone.getDisplay_resolution(), smartphone.getDisplay_size(), smartphone.getNome() , smartphone.getNote(),  smartphone.getPeso() ,smartphone.getRam()});
 	}
+	
+	
+	
 
 	
 }
