@@ -1,11 +1,8 @@
-package com.example.demo.controller;
-
-
+package it.f2informatica.smartphone.controller;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,30 +11,32 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.Smartphone;
-import com.example.demo.service.smartphoneService;
+import it.f2informatica.smartphone.model.Os;
+import it.f2informatica.smartphone.service.osService;
 
 @RestController
 @RequestMapping("/api")
-public class smartphoneController {
-
+public class osController {
+	
 	@Autowired
 	//@Qualifier("MYSQL")
-	smartphoneService repo;
+	osService repo;
 	
-	@GetMapping(path="/smartphone")
-	public List<Smartphone> allSmartphone(){
-		return repo.findAll();
+	@GetMapping(path="/os")
+	public List<Os> allOs(){
+		return repo.getAll();
 	}
-
-	@PostMapping(path="/postSmartphone")
-	public ResponseEntity<String> allSmartphonePost(@RequestBody Smartphone smartphone) {
+	
+	@PostMapping(path="/os")
+	public ResponseEntity<String> postOs(@RequestBody Os newOs) {
 		
-		if(this.repo.findPostAll(smartphone)>0) {
+		if(this.repo.postOs(newOs)>0) {
 			return new ResponseEntity<String>("Ok", HttpStatus.CREATED);
 		}
 		else {
 			return new ResponseEntity<String>("KO", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+
+
 }

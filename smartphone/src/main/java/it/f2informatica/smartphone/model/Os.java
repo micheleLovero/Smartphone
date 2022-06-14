@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package it.f2informatica.smartphone.model;
 
 import java.io.Serializable;
 

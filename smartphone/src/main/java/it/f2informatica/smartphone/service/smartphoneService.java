@@ -1,8 +1,10 @@
-package com.example.demo.service;
+package it.f2informatica.smartphone.service;
 
 import java.util.List;
 
-import com.example.demo.model.Smartphone;
+import it.f2informatica.smartphone.model.Smartphone;
+
+
 
 
 public interface smartphoneService {

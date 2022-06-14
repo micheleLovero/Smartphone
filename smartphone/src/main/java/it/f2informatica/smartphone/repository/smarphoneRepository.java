@@ -1,4 +1,4 @@
-package com.example.demo.repository;
+package it.f2informatica.smartphone.repository;
 
 import java.util.List;
 
@@ -7,8 +7,9 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.model.Smartphone;
-import com.example.demo.service.smartphoneService;
+import it.f2informatica.smartphone.model.Smartphone;
+import it.f2informatica.smartphone.service.smartphoneService;
+
 
 @Repository
 public class smarphoneRepository implements smartphoneService{
