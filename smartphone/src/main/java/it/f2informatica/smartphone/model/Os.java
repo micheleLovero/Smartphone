@@ -22,8 +22,8 @@ public class Os implements Serializable{
 	private static final long serialVersionUID = 1L;
 
     public Os() {
-    	
     }
+    
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
@@ -36,24 +36,13 @@ public class Os implements Serializable{
 	@Column(name="company")
 	private String company;
 	
-	public Smartphone getSmartphone() {
-		return smartphone;
-	}
-
-	public void setSmartphone(Smartphone smartphone) {
-		this.smartphone = smartphone;
-	}
-
 	@Column(name="open_source")
 	private int open_source;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "os", referencedColumnName = "id")
-	private Smartphone smartphone;
-	
+	@OneToOne(mappedBy = "os")
+    private Os os;
 	
 	public Os(String descrizione, String company, int open_source) {
-		super();
 		this.descrizione = descrizione;
 		this.company = company;
 		this.open_source = open_source;

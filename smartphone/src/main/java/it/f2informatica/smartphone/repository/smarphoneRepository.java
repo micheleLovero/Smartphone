@@ -30,7 +30,7 @@ public class smarphoneRepository implements smartphoneService{
 	@Override
 	public int findPostAll(Smartphone smartphone) {
 		
-		return jdbcTemplate.update("INSERT INTO smartphone (cpu, dimensioni, display_ppi, display_resolution, display_size, nome , note, peso, ram) VALUE(?,?,?,?,?,?,?,?,?)", new Object[] {smartphone.getCpu(), smartphone.getDimensioni(), smartphone.getDisplay_pp(), smartphone.getDisplay_resolution(), smartphone.getDisplay_size(), smartphone.getNome() , smartphone.getNote(),  smartphone.getPeso() ,smartphone.getRam()});
+		return jdbcTemplate.update("INSERT INTO smarthphone (cpu, dimensioni, display_pp, display_resolution, display_size, nome , note, peso, ram) VALUE(?,?,?,?,?,?,?,?,?)", new Object[] {smartphone.getCpu(), smartphone.getDimensioni(), smartphone.getDisplay_pp(), smartphone.getDisplay_resolution(), smartphone.getDisplay_size(), smartphone.getNome() , smartphone.getNote(),  smartphone.getPeso() ,smartphone.getRam()});
 	}
 	
 	

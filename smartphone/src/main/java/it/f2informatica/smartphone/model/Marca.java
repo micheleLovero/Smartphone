@@ -26,9 +26,6 @@ public class Marca implements Serializable{
 	}
 	
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "marca", referencedColumnName = "id")
-	private Smartphone smartphone;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -42,23 +39,16 @@ public class Marca implements Serializable{
 	@Column(name="nazionalita")
 	private String nazionalita;
 	
-	
+	@OneToOne(mappedBy = "marca")
+    private Marca marca;
 	
 	public Marca(String brand, String nazionalita) {
-		super();
 		this.brand = brand;
 		this.nazionalita= nazionalita;
 		
 	}
 	
-	public Smartphone getSmartphone() {
-		return smartphone;
-		
-	}
 	
-	public void setSmartphone(Smartphone smartphone) {
-		this.smartphone = smartphone;
-	}
 	public String getBrand() {
 		return this.brand;
 	}

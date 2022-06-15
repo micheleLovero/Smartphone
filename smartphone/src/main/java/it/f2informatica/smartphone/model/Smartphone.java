@@ -58,11 +58,11 @@ public class Smartphone implements Serializable{
 	private String note;
 	
 	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="id_marca")
+	@JoinColumn(name="id_marca",referencedColumnName = "id")
 	private Marca id_marca;
 	
 	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="id_os")
+	@JoinColumn(name="id_os",referencedColumnName = "id")
 	private Os id_os;
 	
 	
